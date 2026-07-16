@@ -1,1 +1,1 @@
-# maiza-mohammed.github.io
+# MAIZA-MOHAMMED.github.io
