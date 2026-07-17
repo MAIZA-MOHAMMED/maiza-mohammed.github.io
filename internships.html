@@ -6,6 +6,42 @@
     <meta name="description" content="Student supervision by Mohammed MAIZA — Master's theses, research internships, and project supervision.">
     <title>Student Supervision - Mohammed MAIZA</title>
     <link rel="stylesheet" href="css/evas_style.css?v=20260531">
+    <style>
+        /* Additional style to enlarge Student Name column */
+        .supervision-table th:nth-child(2),
+        .supervision-table td:nth-child(2) {
+            width: 30%;
+            min-width: 250px;
+        }
+
+        /* Adjust other columns proportionally */
+        .supervision-table th:nth-child(1),
+        .supervision-table td:nth-child(1) {
+            width: 8%;
+        }
+
+        .supervision-table th:nth-child(3),
+        .supervision-table td:nth-child(3) {
+            width: 45%;
+        }
+
+        .supervision-table th:nth-child(4),
+        .supervision-table td:nth-child(4) {
+            width: 17%;
+        }
+
+        /* Ensure table uses full width */
+        .supervision-table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        /* Better spacing for the names */
+        .supervision-table td:nth-child(2) {
+            white-space: nowrap;
+            padding: 10px 12px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -66,11 +102,11 @@
                                         <td>03/09/2020</td>
                                     </tr>
                                     <tr>
-    <td>2</td>
-    <td>-TIKOUBAINE Nawal<br>-BOUHAIK Yamina</td>
-    <td>Apprentissage bayésien à partir des données médicales</td>
-    <td>20/09/2020</td>
-</tr>
+                                        <td>2</td>
+                                        <td>-TIKOUBAINE Nawal<br>-BOUHAIK Yamina</td>
+                                        <td>Apprentissage bayésien à partir des données médicales</td>
+                                        <td>20/09/2020</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -87,8 +123,9 @@
                     </div>
                 </div>
 
-               
-               
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container main">
