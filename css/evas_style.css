@@ -4,16 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --primary-color: #1a365d;
-  --secondary-color: #2c5282;
-  --accent-color: #3182ce;
+  --primary-color: #4a1a6b;      /* Dark purple */
+  --secondary-color: #6b2fa0;    /* Medium purple */
+  --accent-color: #8b4fc8;       /* Light purple */
   --text-color: #2d3748;
   --text-light: #4a5568;
   --text-muted: #718096;
   --bg-light: #f7fafc;
   --bg-white: #ffffff;
   --border-color: #e2e8f0;
-  --hover-color: #4299e1;
+  --hover-color: #9f6fd4;        /* Hover purple */
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -287,7 +287,7 @@ a:focus {
 
 .foto img:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(74, 26, 107, 0.2), 0 10px 10px -5px rgba(74, 26, 107, 0.1);
 }
 
 /* Info section */
@@ -436,6 +436,12 @@ a:focus {
 
 .profile-links a {
   margin-right: 1rem;
+  color: var(--accent-color);
+  transition: all 0.2s ease;
+}
+
+.profile-links a:hover {
+  color: var(--hover-color);
 }
 
 .highlights-list li:before {
@@ -466,7 +472,7 @@ a:focus {
 }
 
 .site-footer a:hover {
-  color: #bee3f8;
+  color: #d4b3f0;  /* Light purple tint */
   text-decoration: underline;
 }
 
