@@ -4,16 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --primary-color: #1a365d;      /* Bleu marine profond */
-  --secondary-color: #2b6cb0;    /* Bleu royal */
-  --accent-color: #3182ce;       /* Bleu vif */
+  --primary-color: #5c0e0e;      /* Rouge très foncé/bordeaux */
+  --secondary-color: #8b1a1a;    /* Rouge foncé */
+  --accent-color: #c0392b;       /* Rouge vif */
   --text-color: #2d3748;
   --text-light: #4a5568;
   --text-muted: #718096;
-  --bg-light: #ebf8ff;           /* Fond bleu très clair */
+  --bg-light: #fdf2f2;           /* Fond rouge très clair */
   --bg-white: #ffffff;
-  --border-color: #bee3f8;
-  --hover-color: #4299e1;        /* Bleu clair pour hover */
+  --border-color: #f5d0d0;
+  --hover-color: #e74c3c;        /* Rouge clair pour hover */
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -287,7 +287,7 @@ a:focus {
 
 .foto img:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(26, 54, 93, 0.2), 0 10px 10px -5px rgba(26, 54, 93, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(92, 14, 14, 0.2), 0 10px 10px -5px rgba(92, 14, 14, 0.1);
 }
 
 /* Info section */
@@ -472,7 +472,7 @@ a:focus {
 }
 
 .site-footer a:hover {
-  color: #bee3f8;  /* Bleu très clair */
+  color: #f5baba;  /* Rouge très clair */
   text-decoration: underline;
 }
 
