@@ -108,6 +108,19 @@
         /* checkmark style */
         .checkmark { font-size: 1.1rem; color: #0f6b3e; }
         .empty { color: #cbd5e1; }
+        /* badge style for level */
+        .badge-level {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #1e293b;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.15rem 0.6rem;
+            border-radius: 16px;
+            margin: 0.1rem 0.15rem;
+        }
+        .badge-level.licence { background: #dbeafe; color: #1e4a7a; }
+        .badge-level.master { background: #fae8ff; color: #6b21a5; }
     </style>
 </head>
 <body>
@@ -165,8 +178,6 @@
                                     <th>Module / Subject</th>
                                     <th>Academic Year</th>
                                     <th>Level</th>
-                                    <th>Licence</th>
-                                    <th>Master</th>
                                     <th>Semester</th>
                                     <th style="text-align:center;">Lecture</th>
                                     <th style="text-align:center;">Tutorial</th>
@@ -178,8 +189,7 @@
                                 <tr>
                                     <td>Functional Programming</td>
                                     <td>2012 - 2013</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -189,8 +199,7 @@
                                 <tr>
                                     <td>Electronics, System Components</td>
                                     <td>2013 - 2014<br>2014 - 2015</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S1</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;">✓</td>
@@ -200,8 +209,7 @@
                                 <tr>
                                     <td>Information and Communication Techniques</td>
                                     <td>2013 - 2014<br>2014 - 2015<br>2023 - 2024</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -211,8 +219,7 @@
                                 <tr>
                                     <td>Programming and Data Structures</td>
                                     <td>2014 - 2015<br>2015 - 2016</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;">✓</td>
@@ -222,8 +229,7 @@
                                 <tr>
                                     <td>Introduction to Algorithms</td>
                                     <td>2014 - 2015<br>2015 - 2016<br>2016 - 2017</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S1</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;">✓</td>
@@ -233,8 +239,7 @@
                                 <tr>
                                     <td>History of Science</td>
                                     <td>2020 - 2021</td>
-                                    <td>L1 SM</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 SM</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -244,8 +249,7 @@
                                 <tr>
                                     <td>Programming Tools for Mathematics 1</td>
                                     <td>2023 - 2024<br>2024 – 2025</td>
-                                    <td>L1 MATH</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MATH</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -255,8 +259,7 @@
                                 <tr>
                                     <td>Programming Tools for Mathematics 2</td>
                                     <td>2022 - 2023<br>2023 - 2024<br>2024 - 2025<br>2025 - 2026</td>
-                                    <td>L2 MATH</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L2 MATH</span></td>
                                     <td>S3</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -266,8 +269,7 @@
                                 <tr>
                                     <td>Object-Oriented Programming with C++</td>
                                     <td>2021 - 2022<br>2022 - 2023<br>2023 - 2024<br>2024 - 2025</td>
-                                    <td>M1 MATH</td>
-                                    <td></td><td>✓</td>
+                                    <td><span class="badge-level master">M1 MATH</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -277,8 +279,7 @@
                                 <tr>
                                     <td>Parallel Computer Architecture and Programming</td>
                                     <td>2021 - 2022<br>2022 - 2023<br>2023 - 2024<br>2024 - 2025<br>2025 - 2026</td>
-                                    <td>M2 MATH</td>
-                                    <td></td><td>✓</td>
+                                    <td><span class="badge-level master">M2 MATH</span></td>
                                     <td>S3</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -288,8 +289,7 @@
                                 <tr>
                                     <td>Open Source Software</td>
                                     <td>2025 - 2026</td>
-                                    <td>L1 MATH</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MATH</span></td>
                                     <td>S1</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -299,8 +299,7 @@
                                 <tr>
                                     <td>Fundamentals of Programming and Scientific Computing with Python</td>
                                     <td>2025 - 2026</td>
-                                    <td>L1 MATH</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MATH</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;">✓</td>
                                     <td style="text-align:center;"></td>
@@ -310,8 +309,7 @@
                                 <tr>
                                     <td>Algorithms 1</td>
                                     <td>2012 - 2013</td>
-                                    <td>L1 MATH</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MATH</span></td>
                                     <td>S1</td>
                                     <td style="text-align:center;"></td>
                                     <td style="text-align:center;">✓</td>
@@ -321,8 +319,7 @@
                                 <tr>
                                     <td>Machine Structure</td>
                                     <td>2013 - 2014<br>2014 - 2015</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;"></td>
                                     <td style="text-align:center;">✓</td>
@@ -332,8 +329,7 @@
                                 <tr>
                                     <td>Algorithms and Data Structures 1</td>
                                     <td>2018 - 2019<br>2019 - 2020<br>2020 - 2021</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S1</td>
                                     <td style="text-align:center;"></td>
                                     <td style="text-align:center;">✓</td>
@@ -343,8 +339,7 @@
                                 <tr>
                                     <td>Probability and Statistics</td>
                                     <td>2021 - 2022<br>2022 - 2023</td>
-                                    <td>L1 MI</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 MI</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;"></td>
                                     <td style="text-align:center;">✓</td>
@@ -354,8 +349,7 @@
                                 <tr>
                                     <td>Algorithms and Data Structures 2</td>
                                     <td>2025 - 2026</td>
-                                    <td>L1 INFO</td>
-                                    <td>✓</td><td></td>
+                                    <td><span class="badge-level licence">L1 INFO</span></td>
                                     <td>S2</td>
                                     <td style="text-align:center;"></td>
                                     <td style="text-align:center;"></td>
@@ -373,13 +367,13 @@
                                 <tr><th>N°</th><th>Module / Subject</th><th>Academic Year</th><th>Level</th><th>URL</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>1</td><td>Object-Oriented Programming with C++</td><td>2024-2025</td><td>M1 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=8847" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=8847</a></td></tr>
-                                <tr><td>2</td><td>Parallel Computer Architecture and Programming</td><td>2024-2025</td><td>M2 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=9785" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=9785</a></td></tr>
-                                <tr><td>3</td><td>Programming Tools for Mathematics</td><td>2024-2025</td><td>L1 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15323" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15323</a></td></tr>
-                                <tr><td>4</td><td>Programming Tools for Mathematics 2</td><td>2024-2025</td><td>L2 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15324" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15324</a></td></tr>
-                                <tr><td>5</td><td>Open source</td><td>2025-2026</td><td>L1 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15321" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15321</a></td></tr>
-                                <tr><td>6</td><td>Fundamentals of Programming and Scientific Computing with Python</td><td>2025-2026</td><td>L1 MATH</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15167" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15167</a></td></tr>
-                                <tr><td>7</td><td>Algorithms and Data Structures 2</td><td>2025-2026</td><td>L1 INFO</td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15395" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15395</a></td></tr>
+                                <tr><td>1</td><td>Object-Oriented Programming with C++</td><td>2024-2025</td><td><span class="badge-level master">M1 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=8847" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=8847</a></td></tr>
+                                <tr><td>2</td><td>Parallel Computer Architecture and Programming</td><td>2024-2025</td><td><span class="badge-level master">M2 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=9785" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=9785</a></td></tr>
+                                <tr><td>3</td><td>Programming Tools for Mathematics</td><td>2024-2025</td><td><span class="badge-level licence">L1 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15323" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15323</a></td></tr>
+                                <tr><td>4</td><td>Programming Tools for Mathematics 2</td><td>2024-2025</td><td><span class="badge-level licence">L2 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15324" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15324</a></td></tr>
+                                <tr><td>5</td><td>Open source</td><td>2025-2026</td><td><span class="badge-level licence">L1 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15321" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15321</a></td></tr>
+                                <tr><td>6</td><td>Fundamentals of Programming and Scientific Computing with Python</td><td>2025-2026</td><td><span class="badge-level licence">L1 MATH</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15167" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15167</a></td></tr>
+                                <tr><td>7</td><td>Algorithms and Data Structures 2</td><td>2025-2026</td><td><span class="badge-level licence">L1 INFO</span></td><td><a class="url-link" href="https://elearn.univ-oran1.dz/course/view.php?id=15395" target="_blank">https://elearn.univ-oran1.dz/course/view.php?id=15395</a></td></tr>
                             </tbody>
                         </table>
                     </div>
