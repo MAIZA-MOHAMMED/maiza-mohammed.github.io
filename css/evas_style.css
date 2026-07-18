@@ -4,18 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --primary-color: #8b3a2a;      /* Rich Terracotta */
-  --secondary-color: #d4a040;    /* Antique Gold */
-  --accent-color: #f0e0c8;       /* Warm Ivory */
-  --text-color: #2a1a1a;
-  --text-light: #5a4a40;
-  --text-muted: #8a7a70;
-  --bg-light: #faf4ee;
+  --primary-color: #1a3a2a;      /* Deep Forest */
+  --secondary-color: #d4af37;    /* Bright Gold */
+  --accent-color: #e8dcc4;       /* Natural Linen */
+  --text-color: #1a2a1e;
+  --text-light: #4a5a4e;
+  --text-muted: #7a8a7e;
+  --bg-light: #f6f4ee;
   --bg-white: #ffffff;
-  --border-color: #e8d8c8;
-  --hover-color: #b88a30;
+  --border-color: #dcd4c4;
+  --hover-color: #b8942a;
 }
-
 * {
   box-sizing: border-box;
 }
