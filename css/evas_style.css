@@ -670,7 +670,7 @@ ul li:before {
 }
 
 .publication-item .year {
-  color: var(--accent-color);
+  color: #1a2a4a;
   font-weight: 600;
 }
 
