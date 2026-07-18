@@ -4,19 +4,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 
 :root {
-  --primary-color: #8B7D3C;      /* Gold/Dark gold */
-  --secondary-color: #A68B3E;    /* Medium gold */
-  --accent-color: #D4AF37;       /* Bright gold */
-  --text-color: #2d3748;
-  --text-light: #4a5568;
-  --text-muted: #718096;
-  --bg-light: #FDF8F0;           /* Cream/gold light background */
+  --primary-color: #1a3a6a;      /* Deep Sapphire */
+  --secondary-color: #e8b832;    /* Warm Gold */
+  --accent-color: #f0e6d0;       /* Vanilla Cream */
+  --text-color: #1a2a3a;
+  --text-light: #4a5a6a;
+  --text-muted: #8a9aaa;
+  --bg-light: #f8f6f0;
   --bg-white: #ffffff;
-  --border-color: #F0E6C8;       /* Light gold border */
-  --hover-color: #C5A028;        /* Hover gold */
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-color: #e0d8c8;
+  --hover-color: #d4a820;
 }
 
 * {
