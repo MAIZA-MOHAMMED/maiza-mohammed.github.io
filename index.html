@@ -9,6 +9,335 @@
     <meta property="og:type" content="website">
     <title>Mohammed MAIZA - Academic Profile</title>
     <link rel="stylesheet" href="css/evas_style.css?v=20260531">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        /* Visitor Counter Styles */
+        .visitor-counter {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin: 20px 0 30px 0;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .visitor-counter-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .visitor-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .visitor-stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .visitor-stat-label {
+            font-size: 0.8em;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        
+        .visitor-countries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            max-width: 300px;
+            justify-content: flex-end;
+        }
+        
+        .visitor-country-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .visitor-country-tag .flag {
+            font-size: 1.1em;
+        }
+        
+        .visitor-loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .visitor-error {
+            color: #ffd700;
+            font-size: 0.9em;
+        }
+        
+        .visitor-refresh-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        
+        .visitor-refresh-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .visitor-timestamp {
+            font-size: 0.7em;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .visitor-counter {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .visitor-counter-stats {
+                justify-content: center;
+            }
+            
+            .visitor-countries {
+                justify-content: center;
+                max-width: 100%;
+            }
+        }
+        
+        /* Existing styles */
+        .profile-header {
+            margin-top: 2rem;
+        }
+        
+        .section-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+        }
+        
+        .section-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .profile-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .profile-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+        }
+        
+        .profile-details h1 {
+            margin: 0 0 5px 0;
+            color: #2d3436;
+            font-size: 2.2em;
+        }
+        
+        .profile-role {
+            color: #636e72;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .profile-links a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.95em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+        
+        .profile-links a:hover {
+            color: #764ba2;
+        }
+        
+        .highlights-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .highlights-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f2f6;
+        }
+        
+        .highlights-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .highlights-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .highlights-list a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .site-footer {
+            background: #2d3436;
+            color: white;
+            padding: 30px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .site-footer a {
+            color: #74b9ff;
+            text-decoration: none;
+        }
+        
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .site-footer-copy {
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .twelve.columns {
+            width: 100%;
+        }
+        
+        .navigation {
+            background: #2d3436;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navigation-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .navigation-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .navigation-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        .navigation-menu a:hover {
+            color: #74b9ff;
+        }
+        
+        .navigation-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .nav-social-link {
+            color: white;
+            transition: color 0.3s;
+            display: inline-flex;
+        }
+        
+        .nav-social-link:hover {
+            color: #74b9ff;
+        }
+        
+        .nav-icon {
+            width: 22px;
+            height: 22px;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-links {
+                justify-content: center;
+            }
+            
+            .navigation-inner {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .navigation-menu {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -39,35 +368,59 @@
                 <div class="section-card profile-header" style="margin-top: 2rem;">
                     <div class="profile-header-inner">
                         <div class="profile-photo">
-                            <!-- placeholder image – replace with actual profile image -->
                             <img src="images/profile-up.jpg" alt="Mohammed MAIZA">
                         </div>
                         <div class="profile-details">
                             <h1>Mohammed MAIZA</h1>
                             <p class="profile-role">Associate Professor in Computer Science</p>
-                                                  <p>
+                            <p>
                                 <strong>Laboratory of Computer Science and Information Technology of Oran (LITIO)</strong><br>
                                 <strong>University of Oran 1 Ahmed Ben Bella</strong><br>
                                 Department of Mathematics
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-                                                  <p class="profile-links">
-    <a href="https://orcid.org/0000-0002-7454-2190" target="_blank" rel="noopener">
-        <i class="fa-brands fa-orcid"></i> ORCID
-    </a>
+                            </p>
+                            <p class="profile-links">
+                                <a href="https://orcid.org/0000-0002-7454-2190" target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-orcid"></i> ORCID
+                                </a>
+                                <a href="https://www.scopus.com/authid/detail.uri?authorId=58972784400" target="_blank" rel="noopener">
+                                    <i class="fa-solid fa-graduation-cap"></i> Scopus
+                                </a>
+                                <a href="https://www.researchgate.net/profile/Mohammed-Maiza?ev=hdr_xprf" target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-researchgate"></i> ResearchGate
+                                </a>
+                                <a href="https://scholar.google.fr/citations?user=yY8HPzoAAAAJ&hl=fr" target="_blank" rel="noopener">
+                                    <i class="fa-brands fa-google"></i> Google Scholar
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-    <a href="https://www.scopus.com/authid/detail.uri?authorId=58972784400" target="_blank" rel="noopener">
-        <i class="fa-solid fa-graduation-cap"></i> Scopus
-    </a>
-
-    <a href="https://www.researchgate.net/profile/Mohammed-Maiza?ev=hdr_xprf" target="_blank" rel="noopener">
-        <i class="fa-brands fa-researchgate"></i> ResearchGate
-    </a>
-
-    <a href="https://scholar.google.fr/citations?user=yY8HPzoAAAAJ&hl=fr" target="_blank" rel="noopener">
-        <i class="fa-brands fa-google"></i> Google Scholar
-    </a>
-</p>
-
+                <!-- VISITOR COUNTER SECTION -->
+                <div class="section-card" style="padding: 0; background: none; box-shadow: none;">
+                    <div class="visitor-counter" id="visitorCounter">
+                        <div class="visitor-counter-stats">
+                            <div class="visitor-stat">
+                                <span class="visitor-stat-number" id="totalVisits">0</span>
+                                <span class="visitor-stat-label">Total Visits</span>
+                            </div>
+                            <div class="visitor-stat">
+                                <span class="visitor-stat-number" id="uniqueCountries">0</span>
+                                <span class="visitor-stat-label">Unique Countries</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px;">
+                            <div class="visitor-countries" id="countryTags">
+                                <span class="visitor-country-tag">
+                                    <span class="visitor-loader"></span> Loading...
+                                </span>
+                            </div>
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <button class="visitor-refresh-btn" onclick="refreshVisitorData()">
+                                    <i class="fas fa-sync-alt"></i> Refresh
+                                </button>
+                                <span class="visitor-timestamp" id="visitorTimestamp">Just now</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,14 +439,15 @@
                 <div class="section-card">
                     <h2>Highlights</h2>
                     <ul class="highlights-list">
-                        <li><a href="research.html">Research</a> — Bioinformatics / Genomics, Machine Learning, Robotics & Computer Vision, Autonomous Vehicles.                  <li><a href="publications.html">Publications</a> — Works in conferences and journals (ORCID, Google Scholar).</li>
+                        <li><a href="research.html">Research</a> — Bioinformatics / Genomics, Machine Learning, Robotics & Computer Vision, Autonomous Vehicles.</li>
+                        <li><a href="publications.html">Publications</a> — Works in conferences and journals (ORCID, Google Scholar).</li>
                         <li><a href="projects.html">Projects &amp; Theses</a> — Co-supervised doctoral theses and research projects.</li>
                         <li><a href="internships.html">Student Supervision</a> — Industry/PFE follow-up and research internships.</li>
                         <li><a href="courses.html">Teaching</a> — Parallel architectures, OOP with C++, Python programming, and scientific computing.</li>
                     </ul>
                 </div>
 
-             </div>
+            </div>
         </div>
     </div>
 
@@ -108,5 +462,177 @@
             <p class="site-footer-copy">© 2026 Mohammed MAIZA</p>
         </div>
     </footer>
+
+    <!-- Visitor Counter JavaScript -->
+    <script>
+        // Data storage
+        let visitorData = {};
+        let countrySet = new Set();
+        
+        // Load data from localStorage
+        function loadVisitorData() {
+            const saved = localStorage.getItem('maiza_visitor_data');
+            if (saved) {
+                try {
+                    visitorData = JSON.parse(saved);
+                    if (visitorData.countries) {
+                        countrySet = new Set(visitorData.countries);
+                    }
+                } catch (e) {
+                    visitorData = { countries: [] };
+                }
+            } else {
+                visitorData = { countries: [] };
+            }
+        }
+        
+        // Save data to localStorage
+        function saveVisitorData() {
+            visitorData.countries = Array.from(countrySet);
+            localStorage.setItem('maiza_visitor_data', JSON.stringify(visitorData));
+        }
+        
+        // Get flag emoji from country code
+        function getFlagEmoji(code) {
+            if (!code || code === 'XX') return '🌐';
+            try {
+                const codePoints = code.toUpperCase().split('').map(char => 127397 + char.charCodeAt(0));
+                return String.fromCodePoint(...codePoints);
+            } catch {
+                return '🌐';
+            }
+        }
+        
+        // Get country info from ipapi
+        async function getCountryInfo() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                if (data && data.country_name && data.country_name !== 'Unknown') {
+                    return {
+                        name: data.country_name,
+                        code: data.country_code || 'XX',
+                        flag: getFlagEmoji(data.country_code)
+                    };
+                }
+                return null;
+            } catch (error) {
+                console.error('Error fetching country:', error);
+                return null;
+            }
+        }
+        
+        // Update the visitor counter display
+        function updateVisitorDisplay() {
+            // Update country tags
+            const tagsContainer = document.getElementById('countryTags');
+            tagsContainer.innerHTML = '';
+            
+            const countries = Array.from(countrySet)
+                .map(item => JSON.parse(item))
+                .sort((a, b) => a.name.localeCompare(b.name));
+            
+            if (countries.length === 0) {
+                tagsContainer.innerHTML = `
+                    <span class="visitor-country-tag">
+                        <span style="opacity: 0.7;">No countries yet</span>
+                    </span>
+                `;
+            } else {
+                // Show top 5 countries or all if less than 5
+                const displayCountries = countries.slice(0, 6);
+                displayCountries.forEach(country => {
+                    const tag = document.createElement('span');
+                    tag.className = 'visitor-country-tag';
+                    tag.innerHTML = `
+                        <span class="flag">${country.flag || '🌐'}</span>
+                        ${country.name}
+                    `;
+                    tagsContainer.appendChild(tag);
+                });
+                
+                if (countries.length > 6) {
+                    const tag = document.createElement('span');
+                    tag.className = 'visitor-country-tag';
+                    tag.textContent = `+${countries.length - 6} more`;
+                    tagsContainer.appendChild(tag);
+                }
+            }
+            
+            // Update stats
+            document.getElementById('uniqueCountries').textContent = countries.length;
+            document.getElementById('totalVisits').textContent = visitorData.totalVisits || 0;
+            
+            // Update timestamp
+            const now = new Date();
+            document.getElementById('visitorTimestamp').textContent = now.toLocaleTimeString();
+            
+            // Save data
+            saveVisitorData();
+        }
+        
+        // Record a new visit
+        async function recordVisit() {
+            try {
+                const countryInfo = await getCountryInfo();
+                
+                if (countryInfo && countryInfo.name !== 'Unknown') {
+                    // Add to country set as JSON string
+                    const countryKey = JSON.stringify({
+                        name: countryInfo.name,
+                        code: countryInfo.code,
+                        flag: countryInfo.flag
+                    });
+                    
+                    countrySet.add(countryKey);
+                    
+                    // Increment total visits
+                    visitorData.totalVisits = (visitorData.totalVisits || 0) + 1;
+                    
+                    updateVisitorDisplay();
+                } else {
+                    // Still increment visits but don't add unknown country
+                    visitorData.totalVisits = (visitorData.totalVisits || 0) + 1;
+                    updateVisitorDisplay();
+                }
+            } catch (error) {
+                console.error('Error recording visit:', error);
+                // Still update display with existing data
+                updateVisitorDisplay();
+            }
+        }
+        
+        // Refresh visitor data (manual)
+        async function refreshVisitorData() {
+            const refreshBtn = document.querySelector('.visitor-refresh-btn');
+            const originalText = refreshBtn.innerHTML;
+            refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            refreshBtn.disabled = true;
+            
+            try {
+                await recordVisit();
+            } catch (error) {
+                console.error('Refresh error:', error);
+            }
+            
+            refreshBtn.innerHTML = originalText;
+            refreshBtn.disabled = false;
+        }
+        
+        // Initialize
+        loadVisitorData();
+        updateVisitorDisplay();
+        
+        // Record visit on page load (with small delay to ensure page loads)
+        setTimeout(recordVisit, 500);
+        
+        // Auto-refresh every 60 seconds (optional)
+        setInterval(() => {
+            // Only refresh if page is visible
+            if (!document.hidden) {
+                recordVisit();
+            }
+        }, 60000);
+    </script>
 </body>
 </html>
