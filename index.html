@@ -9,6 +9,98 @@
     <meta property="og:type" content="website">
     <title>Mohammed MAIZA - Academic Profile</title>
     <link rel="stylesheet" href="css/evas_style.css?v=20260531">
+    <!-- Font Awesome for icons (already present) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        /* Additional inline styles for the visitor counter to match the design */
+        .visitor-stats {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-top: 1.5rem;
+            border-left: 4px solid #2c3e50;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+        .visitor-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.8rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .visitor-stats-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed #dee2e6;
+            font-size: 0.95rem;
+        }
+        .visitor-stats-item .label {
+            color: #495057;
+            font-weight: 500;
+        }
+        .visitor-stats-item .value {
+            font-weight: 600;
+            color: #1a2634;
+        }
+        .visitor-stats-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #495057;
+            padding-top: 0.8rem;
+            border-top: 1px solid #dee2e6;
+            margin-top: 0.8rem;
+        }
+        .visitor-stats-footer .ip {
+            font-family: 'Courier New', monospace;
+            background: #e9ecef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+        .visitor-stats-footer .date {
+            background: #e9ecef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+        .visitor-stats .total-visitors {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1a2634;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .visitor-stats .total-visitors i {
+            color: #2c3e50;
+        }
+        .visitor-stats .subnote {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 0.3rem;
+            text-align: right;
+        }
+        .visitor-stats .subnote a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .visitor-stats .subnote a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .visitor-stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .visitor-stats-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -57,7 +149,6 @@
                                     maiza.mohammed@univ-oran1.dz
                                 </a>
                             </p>
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
                             <p class="profile-links">
                                 <a href="https://orcid.org/0000-0002-7454-2190" target="_blank" rel="noopener">
                                     <i class="fa-brands fa-orcid"></i> ORCID
@@ -97,6 +188,32 @@
                         <li><a href="courses.html">Teaching</a> — Parallel architectures, OOP with C++, Python programming, and scientific computing.</li>
                     </ul>
                 </div>
+
+                <!-- VISITOR COUNTER SECTION (ADDED) -->
+                <div class="section-card visitor-stats">
+                    <div class="total-visitors">
+                        <i class="fas fa-users"></i> VISITEURS <span style="margin-left: auto; font-weight: 300; font-size: 0.9rem; color: #6c757d;">1,829,251</span>
+                    </div>
+                    <div class="visitor-stats-grid">
+                        <div class="visitor-stats-item"><span class="label">Today</span><span class="value">351</span></div>
+                        <div class="visitor-stats-item"><span class="label">Yesterday</span><span class="value">1,820</span></div>
+                        <div class="visitor-stats-item"><span class="label">This Week</span><span class="value">4,190</span></div>
+                        <div class="visitor-stats-item"><span class="label">Last Week</span><span class="value">1,795,968</span></div>
+                        <div class="visitor-stats-item"><span class="label">This Month</span><span class="value">41,021</span></div>
+                        <div class="visitor-stats-item"><span class="label">Last Month</span><span class="value">36,726</span></div>
+                        <div class="visitor-stats-item" style="grid-column: 1 / -1; border-bottom: none; padding-top: 0.5rem; font-weight: 600; color: #1a2634;">
+                            <span class="label">All days</span><span class="value">1,829,251</span>
+                        </div>
+                    </div>
+                    <div class="visitor-stats-footer">
+                        <span><i class="fas fa-globe" style="margin-right: 6px;"></i> Your IP: <span class="ip">41.99.99.236</span></span>
+                        <span><i class="far fa-calendar-alt" style="margin-right: 6px;"></i> <span class="date">2026-07-21 04:41</span></span>
+                    </div>
+                    <div class="subnote">
+                        <i class="fas fa-chart-simple"></i> Visitors Counter · <a href="https://fsea.univ-oran1.dz/" target="_blank" rel="noopener">Faculté des Sciences Exacte et Appliquée</a>
+                    </div>
+                </div>
+                <!-- END VISITOR COUNTER -->
 
             </div>
         </div>
