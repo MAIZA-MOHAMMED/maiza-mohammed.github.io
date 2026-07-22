@@ -9,6 +9,7 @@
     <meta property="og:type" content="website">
     <title>Mohammed MAIZA - Academic Profile</title>
     <link rel="stylesheet" href="css/evas_style.css?v=20260531">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -57,7 +58,6 @@
                                     maiza.mohammed@univ-oran1.dz
                                 </a>
                             </p>
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
                             <p class="profile-links">
                                 <a href="https://orcid.org/0000-0002-7454-2190" target="_blank" rel="noopener">
                                     <i class="fa-brands fa-orcid"></i> ORCID
@@ -108,8 +108,55 @@
                 <a href="https://univ-oran1.dz/language/en/" target="_blank" rel="noopener">University of Oran 1 Ahmed Ben Bella</a>
                 · <a href="https://vrre.univ-oran1.dz/platforme/laboratoires/view.php?id=33" target="_blank" rel="noopener">LITIO</a>
             </p>
+            <!-- Visitor Counter -->
+            <p class="visitor-counter" style="margin-top: 0.8rem; font-size: 0.9rem; color: #7f8c8d;">
+                <i class="fas fa-eye" style="margin-right: 6px;"></i>
+                <span id="visitor-count">Loading...</span> visits
+            </p>
             <p class="site-footer-copy">© 2026 Mohammed MAIZA</p>
         </div>
     </footer>
+
+    <!-- Visitor Counter Script -->
+    <script>
+        (function() {
+            const NAMESPACE = 'maiza-academic-profile';
+            const KEY       = 'homepage-visits';
+            const API_URL   = 'https://api.countapi.xyz';
+
+            async function updateCounter() {
+                const countEl = document.getElementById('visitor-count');
+                try {
+                    // Check if this browser has already counted this session
+                    const hasVisited = localStorage.getItem('maiza_visited');
+                    
+                    let response;
+                    if (!hasVisited) {
+                        // First visit: increment counter
+                        response = await fetch(`${API_URL}/hit/${NAMESPACE}/${KEY}`);
+                        localStorage.setItem('maiza_visited', 'true');
+                    } else {
+                        // Returning visit: just get current count
+                        response = await fetch(`${API_URL}/get/${NAMESPACE}/${KEY}`);
+                    }
+                    
+                    const data = await response.json();
+                    if (countEl) {
+                        countEl.textContent = data.value.toLocaleString();
+                    }
+                } catch (err) {
+                    console.error('Visitor counter error:', err);
+                    if (countEl) countEl.textContent = '—';
+                }
+            }
+
+            // Run when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updateCounter);
+            } else {
+                updateCounter();
+            }
+        })();
+    </script>
 </body>
 </html>
